@@ -1,14 +1,9 @@
 # components_demo
 
-## Project setup
-```
-npm install
-```
-
+### Project setup to download node_modules
+`npm install`
 ### Compiles and hot-reloads for development
-```
-npm run serve
-```
+`npm run serve`
 
 ### Compiles and minifies for production
 ```
