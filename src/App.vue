@@ -3,9 +3,6 @@
     <div>
       <EnrolmentForm />
     </div>
-    <div>
-      <EnrolForm />
-    </div>
   </div>
 </template>
 
