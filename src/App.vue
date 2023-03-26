@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import EnrolmentForm from './components/EnrolmentForm.vue'
+import './App.css';
+import EnrolmentForm from './components/EnrolmentForm.vue';
 
 export default {
   name: 'App',
