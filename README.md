@@ -1,8 +1,8 @@
 # components_demo
 
 ## Project Setup & Node Package Manager(npm)
-### As long as package.json is present, libraries(node_modules) can be installed
 ### Install libraries `npm install`
+##### As long as package.json is present, can install libraries (node_modules)
 ### Compiles and hot-reloads for development & start server `npm run serve`
 ### Compiles and minifies for production `npm run build`
 ### Lints and fixes files `npm run lint`
@@ -12,11 +12,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Vue.js Structure
 ### A single page application
 ### `App.vue` : master component
-- <template></template> : includes html code and also css class using className inside of first <div>
-- <script></script> : import 
-- <style></style>
+- `<template></template>` : includes html code and also css class using className inside of first <div>
+- `<script></script>` : import 
+- `<style></style>`
 ### Whenever user changes input, values will be saved in stages variables
-### `App.vue`
 ```vue.js
 <template>
     <div>
@@ -66,8 +65,6 @@ export default {
 </style>
 ```
  
-###
-
-
-
 ## Establish communiations between components
+    - Parent - Child
+    - Siblings
