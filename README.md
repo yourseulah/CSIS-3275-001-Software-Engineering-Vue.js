@@ -1,19 +1,30 @@
 # components_demo
 
 ## Project Setup & Node Package Manager(npm)
+
 ### Install libraries `npm install` (As long as package.json is present, can install node_modules)
+
 ### Compiles and hot-reloads for development & start server `npm run serve`
+
 ### Compiles and minifies for production `npm run build`
+
 ### Lints and fixes files `npm run lint`
+
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Vue.js Structure
+
 ### A single page application
+
 ### `App.vue` : master component
+
 - `<template></template>` : includes html code and also css class using className
-- `<script></script>` : import 
+- `<script></script>` : import
 - `<style></style>`
+
+### `EnrolmentForm.vue` : child component
 
 ```vue.js
 <template>
@@ -63,7 +74,8 @@ export default {
 <style scoped>
 </style>
 ```
- 
+
 ## Establish communiations between components
+
 - Parent (App.vue) - Child (EnrolmentForm.vue)
 - Siblings (EnrolmentForm.vue - EnrolList.vue)
