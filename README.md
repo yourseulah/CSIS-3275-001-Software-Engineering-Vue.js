@@ -26,7 +26,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### `EnrolmentForm.vue` : child component
 
-#### v-model enables changed values to be saved in stage variables
+- v-model enables changed values to be saved in stage variables
 
 ```vue
 <template>
@@ -84,8 +84,8 @@ export default {
   - Updated seats
 
 - Siblings (EnrolmentForm.vue - EnrolList.vue) : cannot communicate directly, make a parent component
-  - Display student detail
-  - **Conditional Rendering** display the data based on some conditions
+  - Displays student detail
+  - **Conditional Rendering** displays the data based on some conditions
   ```vue
   <ul v-if="items.length">
     <li v-for="item in items" :key="item.id">
