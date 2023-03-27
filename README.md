@@ -75,22 +75,21 @@ export default {
 <style scoped></style>
 ```
 
+### `EnrolList.vue` : child component
+
 ## Establish communications between components
 
 - Parent (App.vue) - Child (EnrolmentForm.vue) : via props
 
-#### Updated seats
+  - Updated seats
 
 - Siblings (EnrolmentForm.vue - EnrolList.vue) : cannot communicate directly, make a parent component
-
-#### Display student detail
-
-#### **Conditional Rendering** display the data based on some conditions
-
-```vue
-<ul v-if="items.length">
-      <li v-for="item in items" :key="item.id">
-        Student Details : {{ item.fname }} {{ item.lname }} {{ item.program }}
-      </li>
-    </ul>
-```
+  - Display student detail
+  - **Conditional Rendering** display the data based on some conditions
+  ```vue
+  <ul v-if="items.length">
+    <li v-for="item in items" :key="item.id">
+      Student Details : {{ item.fname }} {{ item.lname }} {{ item.program }}
+    </li>
+  </ul>
+  ```
