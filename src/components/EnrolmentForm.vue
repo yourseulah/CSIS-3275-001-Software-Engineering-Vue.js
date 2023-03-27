@@ -1,7 +1,7 @@
 <template>
     <div>
         <form className='enrolForm'>
-            <h1>Student Details</h1>
+            <h1>{{ chosenProgram }} Student Details</h1>
             <label>First name:</label>
             <input type="text" name="fname" v-model="fname" />
             <br />
@@ -21,6 +21,7 @@
 import '../App.css';
 export default {
     name: 'EnrollmentForm',
+    props: ['chosenProgram', 'currentSeats', 'setUpdatedSeats'],
     data() {
         return {
             //stage variables
@@ -37,6 +38,7 @@ export default {
         handleSubmit(event) {
             event.preventDefault();
             this.welcomeMessage = `Welcome ${this.fname} ${this.lname}`; //backtick, NOT single quote
+            this.setUpdatedSeats(this.currentSeats -1)
         }
     }
 

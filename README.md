@@ -73,7 +73,7 @@ export default {
 <style scoped></style>
 ```
 
-## Establish communiations between components
+## Establish communications between components
 
 - Parent (App.vue) - Child (EnrolmentForm.vue)
 - Siblings (EnrolmentForm.vue - EnrolList.vue)
