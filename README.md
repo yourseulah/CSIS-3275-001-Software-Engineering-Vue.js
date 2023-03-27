@@ -75,5 +75,5 @@ export default {
 
 ## Establish communications between components
 
-- Parent (App.vue) - Child (EnrolmentForm.vue)
+- Parent (App.vue) - Child (EnrolmentForm.vue) : via props
 - Siblings (EnrolmentForm.vue - EnrolList.vue)

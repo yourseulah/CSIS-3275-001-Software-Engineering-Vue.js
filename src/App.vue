@@ -14,10 +14,14 @@
       </select>
     </div>
     <div>
+      <!-- sending "program" variable to a child component(EnrolmentForm.vue) via props -->
       <EnrolmentForm :chosenProgram="program" 
         :currentSeats="program === 'UG' ? ugSeats : pgSeats"
-        :setUpdatedSeats="setUpdatedSeats"/>
-      <!-- sendning "program" variable to a child component(EnrolmentForm.vue) via props -->
+        :setUpdatedSeats="setUpdatedSeats"
+        :setStudentDetail="setStudentDetail"/>
+    </div>
+    <div>
+      <EnrolList :studentDetail="studentDetail"/>
     </div>
   </div>
 </template>
@@ -25,22 +29,29 @@
 <script>
 import './App.css';
 import EnrolmentForm from './components/EnrolmentForm.vue';
+import EnrolList from './components/EnrolList.vue';
 
 export default {
   name: 'App',
   components: {
     EnrolmentForm,
+    EnrolList
   },
 
   data() {
     return {
       program: "UG",
       ugSeats: 60,
-      pgSeats: 40
+      pgSeats: 40,
+      studentDetail: {} //an empty object
     };
   },
 
   methods: {
+    setStudentDetail(studentDetail) {
+      this.studentDetail = studentDetail;
+    },
+
     setUpdatedSeats(updatedSeats) {
       if(this.program === 'UG') {
         this.ugSeats = updatedSeats;

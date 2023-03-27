@@ -9,7 +9,7 @@
             <input type="text" name="lname" v-model="lname"/>
             <br />
             <br />
-            <input type='submit' value='Submit' @click="handleSubmit" />
+            <input type='submit' value='Enroll' @click="handleSubmit" />
             <br />
             <label id="studentMsg" className="message">{{ welcomeMessage }}</label>
         </form>
@@ -21,7 +21,7 @@
 import '../App.css';
 export default {
     name: 'EnrollmentForm',
-    props: ['chosenProgram', 'currentSeats', 'setUpdatedSeats'],
+    props: ['chosenProgram', 'currentSeats', 'setUpdatedSeats', 'setStudentDetail'],
     data() {
         return {
             //stage variables
@@ -33,12 +33,19 @@ export default {
         }
     },
     methods: {
-        //disallow default event in the webpage
-        //when user clicks submit button, we don't want to submit the form
+        
         handleSubmit(event) {
-            event.preventDefault();
+            event.preventDefault(); //disallow default event in the webpage when user clicks submit btn, won't submit form
             this.welcomeMessage = `Welcome ${this.fname} ${this.lname}`; //backtick, NOT single quote
-            this.setUpdatedSeats(this.currentSeats -1)
+            this.setUpdatedSeats(this.currentSeats -1);
+            let newStudent = {
+                fname: this.fname,
+                lname: this.lname,
+                program: this.chosenProgram
+            }
+            this.setStudentDetail(newStudent);
+            this.fname = "";
+            this.lname = "";
         }
     }
 
