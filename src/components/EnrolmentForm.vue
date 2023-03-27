@@ -25,7 +25,7 @@ export default {
     data() {
         return {
             //stage variables
-            //whenever user changes the input, value typed will be save in below stage variables
+            //whenever user changes the input, value typed is saved in below stage variables
             //v-model enables it.
             welcomeMessage: "",
             fname:"",
@@ -38,11 +38,13 @@ export default {
             event.preventDefault(); //disallow default event in the webpage when user clicks submit btn, won't submit form
             this.welcomeMessage = `Welcome ${this.fname} ${this.lname}`; //backtick, NOT single quote
             this.setUpdatedSeats(this.currentSeats -1);
+            
             let newStudent = {
                 fname: this.fname,
                 lname: this.lname,
                 program: this.chosenProgram
             }
+
             this.setStudentDetail(newStudent);
             this.fname = "";
             this.lname = "";
