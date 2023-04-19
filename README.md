@@ -21,7 +21,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - `<style></style>`
 
 ### `EnrolmentForm.vue` : child component
-- v-model enables changed values to be saved in stage variables declared in data() in <script>
+- v-model enables changed values to be saved in stage variables (fname, lname)
 
 ```vue
 <template>
@@ -29,7 +29,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     <form className="enrolForm">
       <h1>Student Details</h1>
       <label>First name:</label>
-      <input type="text" name="fname" v-model="fname" /> //v-model enables to save in stage variable whenever there is a change in the input
+      <input type="text" name="fname" v-model="fname" /> 
+      //v-model enables changed values to be saved in stage variables
       <br />
       <label>Last name:</label>
       <input type="text" name="lname" v-model="lname" />
