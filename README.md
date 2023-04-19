@@ -74,12 +74,14 @@ export default {
 
 ## Establish communications between components
 
-- Parent (App.vue) to Child (EnrolmentForm.vue) via props. It pass variables or functions to the child component
+- Parent (App.vue) to Child (EnrolmentForm.vue) via props. 
+  Props pass variables or functions to the child component
   - :chosenProgram="program" 
-     transport either "UG" or "PG" defined by "program" vaiable to child component to change title
+    transport either "UG" or "PG" defined by "program" vaiable to child component to change title
   - :currentSeats="program === 'UG' ? ugSeats : pgSeats" 
     selected program will be saved in each variable
   - :setUpdatedSeats="setUpdatedSeats" 
+    function is defined and executed in parent and setUpdatedSeats prop carrying setUpdateSeats will be called in child component
   ```vue
     <div>
       <EnrolmentForm :chosenProgram="program" 
@@ -99,7 +101,8 @@ export default {
     }
   }
   ```
-- Child (EnrolmentForm.vue) to Parent (App.vue) cannot use props. Call setUpdatedSeats() function in child, but the execution is done in parent
+- Child (EnrolmentForm.vue) to Parent (App.vue) cannot use props. 
+  Calls setUpdatedSeats() function defined in parent and the execution is done in parent 
   ```vue
   export default {
     name: 'EnrollmentForm',
