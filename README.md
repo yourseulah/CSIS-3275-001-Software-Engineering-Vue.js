@@ -4,11 +4,7 @@
 
 #### Install libraries `npm install` (As long as package.json is present, can install node_modules)
 
-#### Compiles and hot-reloads for development & start server `npm run serve`
-
-#### Compiles and minifies for production `npm run build`
-
-#### Lints and fixes files `npm run lint`
+#### Start server `npm run serve`
 
 #### Customize configuration
 
@@ -25,8 +21,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - `<style></style>`
 
 ### `EnrolmentForm.vue` : child component
-
-- v-model enables changed values to be saved in stage variables
+- v-model enables changed values to be saved in stage variables declared in data() in <script>
 
 ```vue
 <template>
