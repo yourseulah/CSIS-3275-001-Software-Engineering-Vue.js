@@ -47,7 +47,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 import "../App.css";
 export default {
   name: "EnrollmentForm",
-  props: ['chosenProgram'],
+  props: ['chosenProgram'], //props declared
   data() {
     return {
       //stage variables
@@ -74,10 +74,54 @@ export default {
 
 ## Establish communications between components
 
-- Parent (App.vue) - Child (EnrolmentForm.vue) via props 
-  - chosenProgram
-  - Updated seats
-
+- Parent (App.vue) to Child (EnrolmentForm.vue) via props. It pass variables or functions to the child component
+  - :chosenProgram="program" 
+     transport either "UG" or "PG" defined by "program" vaiable to child component to change title
+  - :currentSeats="program === 'UG' ? ugSeats : pgSeats" 
+    selected program will be saved in each variable
+  - :setUpdatedSeats="setUpdatedSeats" 
+  ```vue
+    <div>
+      <EnrolmentForm :chosenProgram="program" 
+      :currentSeats="program === 'UG' ? ugSeats : pgSeats"
+      :setUpdatedSeats="setUpdatedSeats"/>
+    </div>
+  ```
+  - methods
+  ```vue
+    methods: {
+    setUpdatedSeats(updatedSeats) {
+      if(this.program === 'UG') {
+        this.ugSeats = updatedSeats;
+      } else {
+        this.pgSeats = updatedSeats;
+      }
+    }
+  }
+  ```
+- Child (EnrolmentForm.vue) to Parent (App.vue) cannot use props. Call setUpdatedSeats() function in child, but the execution is done in parent
+  ```vue
+  export default {
+    name: 'EnrollmentForm',
+    props: ['chosenProgram', 'currentSeats', 'setUpdatedSeats'],
+    data() {
+        return {
+            //stage variables
+            welcomeMessage: "",
+            fname: "",
+            lname: ""
+        }
+    },
+    methods: {
+        handleSubmit(event) {
+            event.preventDefault();
+            this.welcomeMessage = `Welcome ${this.fname} ${this.lname}`;
+            this.setUpdatedSeats(this.currentSeats - 1);
+        }
+    }
+  }
+  ```
+    
 - Siblings (EnrolmentForm.vue - EnrolList.vue) : cannot communicate directly, make a parent component
   - Displays student detail
   - **Conditional Rendering** displays the data based on some conditions
