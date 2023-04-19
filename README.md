@@ -14,7 +14,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### A single page application
 
-### `App.vue` : master component
+### `App.vue` : master/parent component
 
 - `<template></template>` : includes html code and also css class using className
 - `<script></script>` : import
