@@ -47,6 +47,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 import "../App.css";
 export default {
   name: "EnrollmentForm",
+  props: ['chosenProgram'],
   data() {
     return {
       //stage variables
