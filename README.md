@@ -29,7 +29,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     <form className="enrolForm">
       <h1>Student Details</h1>
       <label>First name:</label>
-      <input type="text" name="fname" v-model="fname" />
+      <input type="text" name="fname" v-model="fname" /> //v-model enables to save in stage variable whenever there is a change in the input
       <br />
       <label>Last name:</label>
       <input type="text" name="lname" v-model="lname" />
@@ -49,8 +49,6 @@ export default {
   data() {
     return {
       //stage variables
-      //whenever user changes the input, they are saved in below stage variables
-      //v-model enables it.
       welcomeMessage: "",
       fname: "",
       lname: "",
@@ -74,8 +72,8 @@ export default {
 
 ## Establish communications between components
 
-- Parent (App.vue) - Child (EnrolmentForm.vue) : via props
-
+- Parent (App.vue) - Child (EnrolmentForm.vue) via props 
+  - chosenProgram
   - Updated seats
 
 - Siblings (EnrolmentForm.vue - EnrolList.vue) : cannot communicate directly, make a parent component
