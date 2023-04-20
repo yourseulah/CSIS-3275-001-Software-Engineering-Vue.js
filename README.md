@@ -8,11 +8,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Vue.js Structure
 ### A single page application
+Vue has below three parts :
+  - `<template></template>` : includes html code and also css class using className
+  - `<script></script>` : import
+  - `<style></style>`
 ### `App.vue` : master/parent component
-- `<template></template>` : includes html code and also css class using className
-- `<script></script>` : import
-- `<style></style>`
-
 ```vue
 <template>
   <div className='App'>
